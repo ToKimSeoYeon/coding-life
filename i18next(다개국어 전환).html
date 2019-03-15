@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+    <head>
+        <style>
+            input[type="button"]
+            {
+                width: 100px;
+                height: 40px;
+            }
+        </style>
+
+    </head>
+
+        <input type="button" onclick="changeLang('en-us')" value="영어"> <!-- 버튼 정의 -->
+        <input type="button" onclick="changeLang('kr-KR')" value="한국어"> <!-- 버튼 정의 -->
+        <input type="button" onclick="changeLang('jp-JP')" value="일본어"> <!-- 버튼 정의 -->
+
+        <ul>
+            <li data-i18n="in:Konvini"></li>
+            <li data-i18n="in:Rakuten"></li>
+        </ul>
+
+        <h2 data-i18n="in:Konvini"></h2>
+
+        <!-- 한번 썼던 코드도 재호출 할 수 있다. -->
+
+        <select>
+            <option data-i18n="in:Konvini"></option>
+            <option data-i18n="in:Rakuten"></option>
+        </select>
+
+    <br>
+    <br>
+
+    <button id="btn" data-i18n="in:Konvini"></button>
+
+        <br>
+        <br>
+
+        <input type="button" data-i18n="[value]in:Konvini">
+    <br>
+    <br>
+        <input type="text" data-i18n="[placeholder]in:Konvini">
+    <br>
+    <br>
+        <textarea data-i18n="in:Rakuten"></textarea>
+
+        <p data-i18n="in:Rakuten"></p>
+
+    <span data-i18n="in:Rakuten"></span>
+
+        <input type="text"  placeholder="data-i18n='in:Rakuten'">
+
+    <div class="LangTranslation"> <!-- DIV 재호출 역시 가능하다 -->
+
+        <ul>
+            <li data-i18n="in:Konvini"></li>
+            <li data-i18n="in:Rakuten"></li>
+        </ul>
+
+        <button data-i18n="in:Rakuten"></button> <!-- 버튼도 가능하다 -->
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/1.9.0/i18next.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.i18n.init({
+            lng: 'jp-JP', /* 맨 처음으로 출력될 기본 언어 */
+            debug: true, /* 콘솔로 관제 OK */
+            useLocalStorage: false, // 로컬에 저장
+            localStorageExpirationTime: 86400000, // in ms, default 1 week
+            ns: {
+                /* 네임스페이스 지정 */
+                namespaces: ['in'], /* 호출할 속성 앞에 붙는 부모 클래스? 같은 개념 */
+                defaultNs: 'in' /* 기본 네임스페이스 지정이 가능하다. */
+            },
+            resStore: {
+                /*  */
+                "en-US": {
+                    "in": {
+                        "Konvini": "Konvini",
+                        "Rakuten": "Rakuten"
+                    },
+                    "text": {
+                        "Fist-text": "This is English!"
+                    }
+                },
+                "kr-KR": {
+                    "in": {
+                        "Konvini": "콘비니",
+                        "Rakuten": "라쿠텐"
+                    },
+                    "text": {
+                        "Fist-text": "한글입니다!"
+                    }
+                },
+                "jp-JP": {
+                    "in": {
+                        "Konvini": "Konvini_JP",
+                        "Rakuten": "Rakuten_JP"
+                    },
+                    "text": {
+                        "Fist-text": "これは日本語です!"
+                    }
+                }
+            }
+        }, function () {
+            $('body').i18n();
+        });
+
+        var changeLang = function (lang) {
+            $.i18n.setLng(lang);
+            $('body').i18n();
+        }
+
+    </script>
+    </body>
+</html>
