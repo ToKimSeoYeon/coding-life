@@ -1,0 +1,74 @@
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url("https://source.unsplash.com/SfLxL2Fayw8/1600x900");
+    /* 이미지에 투명도를 주어서 더 있어보이게 만듬 */
+    height: 100vh;
+    /*  */
+    background-size: cover;
+    background-position: center;
+    /* background를 어느쪽 방향에 치우치게 할 것인지 */
+}
+
+.login-page{
+    width: 360px;
+    padding: 10% 0 0;
+    margin: auto;/* margin: auto로 하면 알아서 가운데 정렬이 된다. */
+    
+}
+
+.form{
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;/* form안에 모든 태그를 가운데 정렬시킴 */
+}
+
+.form input{
+    font-family: "Roboto", sans-serif;
+    outline: 1;
+    background: #f2f2f2;/* 흰색과는 조금 구분되는 회색깔 */
+    width: 100%;/* input태그들을 정갈하게 해줌 */
+    border: 0;/* border가 없음 으로써 투명적인 매력을 줌 */
+    margin: 0 0 15px;/* input태그들 간의 간격을 주었음 */
+    padding: 15px;
+    /* 보통 padding이 공간을 여유있게 만들고 예뻐지게 만드는 주요역할 */
+    box-sizing: border-box;
+    font-size:14px;
+
+}
+
+.form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;/* 연한 초록색 */
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;/* 마우스를 올리면 손모양 나오게함 */
+}
+
+.form button:hover, .form button:active{
+    background: #43A047;/* 좀더 진한 초록색 */
+}
+
+.form .message{
+    margin: 15px 0 0;
+    color: rgb(182, 126, 119);
+    font-size: 12px;
+    
+}
+
+.form .message a{
+    color: #4CAF50;
+    text-decoration: none;
+
+}
+
+.form .register-form{
+    display: none;
+}
