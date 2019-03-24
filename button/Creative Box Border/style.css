@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family =Poppins:100,200,300,400,500,600,700,800,900');
+body
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* body태그 안에 있는 모든 content를 왼쪽 가운데 오른쪽 중 가운데 정렬 */
+    align-items: center;
+    /* content를 위 가운데 아래 중 가운데 정렬 */
+    min-height: 100vh;
+    background: #060c21;
+    font-family: 'Poppins', sans-serif;
+}
+.container
+{
+    position: relative;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 0 40px;
+}
+.container .box
+{
+    position: relative;
+    height: 400px;
+    background: #060c21;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+}
+.container .box::before
+{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #fff;
+    transform: skew(2deg, 2deg);
+    /* 핵심 기능, 상자를 날카롭게 보이게 만들어줌 */
+    z-index: -1;
+}
+.container .box:nth-child(1)::before
+{
+   background: linear-gradient(315deg,#ff0057,#e64a19);
+   /* 날카로운 부분에 색깔을 입혀준다 */
+}
+.container .box:nth-child(2)::before
+{
+   background: linear-gradient(315deg,#89ff00,#e64a19);
+   /* 날카로운 부분에 색깔을 입혀준다 */
+}
+.container .box:nth-child(3)::before
+{
+   background: linear-gradient(315deg,#e91e63,#5d02ff);
+   /* 날카로운 부분에 색깔을 입혀준다 */
+}
+.container .box:nth-child(4)::before
+{
+   background: linear-gradient(315deg,#ff0000,#ffc107);
+   /* 날카로운 부분에 색깔을 입혀준다 */
+}
+.container .box::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.05);
+    /* 반쪽자리 색깔 만드는 것 */
+    pointer-events: none;
+}
+.content
+{
+    position: relative;
+    padding: 20px;
+    transform: translateY(40px);
+}
+.box .content h2
+{
+    position: absolute;
+    top: -60px;
+    /* box안에 있는 숫자를 위로 끌어당겨줌 */
+    right: 20px;
+    /* 원래 왼쪽에 있던 숫자를 오른쪽에서 20px 밀리게 해줌 */
+    margin: 0;
+    padding: 0;
+    font-size: 10em;
+    color: rgba(255,255,255,.05);
+    /* 숫자를 투명하게 만들어줌 */
+    transition: 0.5s;
+}
+.box:hover .content h2
+{
+    top: -140px;
+    /* 저 정도 숫자크기에서 100px이상은 해줘야 움직임이 보임 */
+}
+.box .content h3
+{
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 24px;
+    /* font-weight: 500; */
+    /* 나는 font-weight안주는게 더 낳아보임 */
+    color: #fff;
+}
+.box .content p
+{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 16px;   
+}
+.box .content a
+{
+    position: relative;
+    margin: 20px 0 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    display: inline-block;
+    color: #fff;
+    transition: 0.5s;
+    transform: translateY(-40px);
+    opacity: 0;
+    visibility: hidden;
+}
+.box:hover .content a
+{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+.box .content a:hover
+{
+    color: #000;
+    /* 글씨 색깔 */
+    background: #fff;
+
+}

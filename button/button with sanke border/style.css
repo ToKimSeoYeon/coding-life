@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    /* background: #0c002b; */
+    background: #0c002b;
     font-family: sans-serif;
 }
 a{
@@ -33,7 +33,7 @@ a::before{
     /* top, bottom, left, right값을 주지 않을 때 default는 가운데 정렬 이다 */
     width: 50%;
     height: 100%;
-    background: rgb(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.05);
     /* a태그의 절반은 다른 색이 된다 */
 }
 a span:nth-child(1){
