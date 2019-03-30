@@ -24,9 +24,24 @@ const movies = [
 
 ]
 class App extends Component {
+
+  state = {
+    greeting: 'Hello!'
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        greeting: 'Hello again!'
+      })
+    }, 5000)
+  }
+
   render() {
+
     return (
       <div className="App">
+      {this.state.greeting}
         {movies.map((movie, index) => {
           return <Movie title={movie.title} poster={movie.poster} key={index}/>
         })}
