@@ -1,0 +1,10 @@
+{
+  "name": "coding-life",
+  "version": "1.0.0",
+  "description": "create-react-app",
+  "main": "index.js",
+  "repository": "https://github.com/ToKimSeoYeon/coding-life.git",
+  "author": "ToKimSeoYeon <rlagmlwnd3@daum.net>",
+  "license": "MIT",
+  "private": true
+}
