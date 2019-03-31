@@ -1,28 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import FlashcardComponent from './Flashcard';
+
 
 class App extends Component {
+  // constructor(props) {
+  //   super(props);
+
+  //   this.state = {
+  //     traditional: "明明",
+  //     simplified: "明明",
+  //     eWriting_toneNum: "ming2ming2",
+  //     pronounce: ""
+  //   };
+  // }
+
+  state = {
+    traditional: "明",
+    simplified: "明",
+    eWriting_toneNum: "ming2",
+    pronounce: ""
+  };
+
+
+  componentDidMount() {
+
+  }
+
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <FlashcardComponent trandi={this.state.traditional} simplified={this.state.simplified} eWriting_toneNum={this.state.eWriting_toneNum}/>
       </div>
     );
   }
 }
+
 
 export default App;
