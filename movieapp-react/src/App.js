@@ -7,36 +7,15 @@ import Movie from './movie';
 class App extends Component {
 
   state = {
-    greeting: 'Hello!',
     
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      //infinite scroll(페이스북 형식)의 힌트
-      this.setState({ 
-        movies: [
-          {
-            title: "Matrix",
-            poster: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/The_Matrix_Poster.jpg/220px-The_Matrix_Poster.jpg"
-          },
-          {
-            title: "Full Metal Jacket",
-            poster: "https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Full_Metal_Jacket_poster.jpg/220px-Full_Metal_Jacket_poster.jpg"
-          },
-          {
-            title: "Oldboy",
-            poster: "https://m.media-amazon.com/images/M/MV5BMTI3NTQyMzU5M15BMl5BanBnXkFtZTcwMTM2MjgyMQ@@._V1_UX182_CR0,0,182,268_AL_.jpg"
-          },
-          {
-            title: "Star Wars", 
-            poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjQItr6vlitIx6I23CbA6PlfQh1h7nFrCvVNRRfeZhJUVHKLHvDA"
-          }
-          
-        
-        ]
-      })
-    }, 2000)
+    fetch('https://yts.am/api/v2/list_movies.json?sort_by=rating')
+    // .then(response => console.log(response))
+    .then(potato => potato.json()) // json으로 바꿔주기
+    .then(json => console.log(json))
+    .catch(err => console.log(err))
   }
 
   // 영화리스트를 불러오는 function
