@@ -16,7 +16,13 @@ class App extends Component {
   // _ 를 쓰는 이유는 자체기능과 자체기능이 아닌것을 구분하기위해, 나의 기능은 _ 로 시작함
   _renderMovies = () => {
     const movies = this.state.movies.map(movie => {
-      return <Movie title ={movie.title} poster={movie.large_cover_image} key={movie.id} />
+      return <Movie 
+        title ={movie.title_english} 
+        poster={movie.medium_cover_image} 
+        key={movie.id} 
+        genres={movie.genres}
+        synopsis={movie.synopsis}
+        />
     })
     // 영화리스트들은 movies라는 한곳에 저장함
     return movies
