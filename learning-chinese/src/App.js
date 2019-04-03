@@ -16,7 +16,7 @@ class App extends Component {
   // }
 
   state = {
-    traditional: "明",
+    Hanza: "明",
     simplified: "明",
     eWriting_toneNum: "ming2",
     pronounce: ""

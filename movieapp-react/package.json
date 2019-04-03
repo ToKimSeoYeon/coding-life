@@ -13,8 +13,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "http://ToKimSeoYeon.github.io/movieapp-react",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -23,5 +25,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "create movie app, use by https://yts.am/api",
+  "main": "index.js",
+  "repository": "https://github.com/ToKimSeoYeon/movieapp-react",
+  "author": "ToKimSeoYeon <rlagmlwnd3@daum.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  }
 }
